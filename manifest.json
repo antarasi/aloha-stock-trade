@@ -1,0 +1,50 @@
+{
+	"manifestVersion": 1,
+	"name": "Stock Portfolio Plugin",
+	"version": "1.0.0",
+	"description": "A plugin for managing your stock portfolio",
+	"author": "Adrian",
+	"main": "src/index.esm.js",
+	"icon": "src/icon.svg",
+	"tools": [
+		{
+			"name": "listMyStocks",
+			"displayName": "List My Stocks",
+			"description": "List all the stocks iin your portfolio"
+		},
+		{
+			"name" : "buyStock",
+			"displayName" : "Buy Shares",
+			"description": "Buy shares of a specific stock symbol and quantity",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"symbol": {
+						"type": "string",
+						"description": "The symbol of the stock to buy"
+					},
+					"quantity": {
+						"type": "number",
+						"description": "The quantity of the stock to buy"
+					}
+				},
+				"required": ["symbol", "quantity"]
+			}
+		},
+		{
+			"name" : "sellStock",
+			"displayName" : "Sell Shares",
+			"description": "Sell shares of a specific symbol",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"symbol": {
+						"type": "string",
+						"description": "The symbol of the stock to sell"
+					}
+				},
+				"required": ["symbol"]
+			}
+		}
+	]
+}
